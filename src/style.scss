@@ -1,0 +1,284 @@
+*, *:before, *:after {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    background-color: lightblue;
+    position: relative;
+
+}
+
+#container {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-rows: 5em 4em 1fr;
+    width: 100vw;
+    height: min(100%);
+    margin: auto;
+       
+}
+
+h1 {
+
+    grid-column: 1/6;
+    grid-row: 1/2;
+    padding: 2rem 0 4rem 0;
+    margin-top: 1rem;
+    background: linear-gradient(blue, lightblue);
+    text-align: center;
+    align-self: center;
+    font-size: 2.7rem;
+    text-shadow: .1rem .1rem white;
+    font-family: cursive;
+    color: rgba(0, 0, 0, 0.9);
+
+}
+
+#input {
+
+    grid-column: 2/4;
+    grid-row: 2/3;
+    padding: .5rem;
+    border: .1rem inset rgba(12, 4, 54, 0.8);
+    border-radius: .2rem;
+    outline: none;
+    align-self: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: cursive;
+    margin-right: .05rem;
+    box-shadow: .02rem .02rem rgba(0,0,0, 1);
+
+}
+
+#add-btn {
+
+    grid-column: 4/5;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: end;
+    padding: .9rem;
+    border: .1rem inset rgba(12, 4, 54, 0.8);
+    border-radius: .2rem;
+    outline: none;
+    font-size: .9rem;
+    font-weight: bold;
+    text-shadow: .02rem .02rem white;
+    background-color: white;
+    margin-left: .05rem;
+    box-shadow:  .02rem .02rem rgba(0,0,0, 1);
+
+}
+
+ul {
+
+    grid-column: 2/5;
+    grid-row: 3/4;
+    list-style-type: none;
+    justify-self: stretch;
+   
+}
+
+li {
+
+    background-color: rgb(245, 241, 241);
+    border: 1px 1px 0px 1px solid white;
+    border-radius: .2rem;
+    border-bottom: .05rem solid black;
+    outline: none;
+    font-size: .8rem;
+    padding: .2rem;
+    grid-column: 2/5;
+    font-family: cursive;
+    justify-self: stretch;
+    box-shadow: .0rem .05rem .1rem black;
+
+    &:hover {
+
+        border: .01rem solid black;
+        outline: none;
+        box-shadow: .0rem .1rem .1rem black;
+
+    }
+
+}
+
+li:nth-child(even) {
+
+    background-color: rgb(220, 231, 235);
+
+}
+
+span {
+
+    grid-column: 5/6;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: center;
+    justify-self: start;
+  
+}
+
+.completeItem {
+
+    margin-right: .5rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    padding: .2rem;
+    margin-top: .4rem;
+    margin-left: .2rem;
+    align-self: center;
+    justify-self: center;
+
+    &:hover {
+
+        display: inline-block;
+        transform: scale(1.2);
+        background-color: rgba(0,0,0, .5);
+        color: red;
+        cursor: pointer;
+
+    }
+
+}
+
+.deleteItem {
+
+    height: 1.5rem;
+    font-size: 1.4rem;
+    margin: .1rem;
+    padding: .1rem;
+    align-self: center;
+    font-weight: bold;
+    float: right;
+    clear: both;
+    font-size: 1.5rem;
+
+    &:hover {
+
+        cursor: pointer;
+        transform: scale(1.05);
+        text-shadow: .05rem .05rem white;
+
+    }
+    
+}
+
+.editText {
+
+    display: none;
+    height: 2rem;
+    font-size: 1.5rem;
+    border: .1rem solid black;
+    border-radius: .1rem;
+    outline: none;
+    justify-self: stretch;
+    box-sizing:border-box;
+}
+
+.newText:hover {
+
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.editButton {
+
+    display: none;
+    height: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .3rem;
+    border: .1rem solid black;
+    border-radius: .1rem;
+    outline: none;
+    margin-left: .8rem;
+    justify-self: stretch;
+
+}
+
+.completed {
+
+    text-decoration: line-through;
+    opacity: 0.5;
+
+}
+
+.faded {
+
+    opacity: .3;
+    
+}
+
+// Animation for adding items
+
+.added {
+
+    animation: shake .3s;
+    animation-delay: .3s, .3s;
+
+    &:hover {
+
+        transform: scale(1.008);
+        background-color: rgb(195, 206, 221);
+        color: rgb(37, 37, 131);
+        text-shadow: .5px .5px white;
+        // transform: border(1px solid blue);
+
+    }
+}
+
+@keyframes shake {
+    0% {
+      transform: scale(1.1) rotate(5deg);
+    }
+    10% {
+        transform: rotate(3deg);
+    }
+    20% {
+        transform: rotate(-5deg);
+        background-color: lightblue;
+        border: 1px solid blue;
+    }
+    30% {
+        transform: rotate(3deg);
+    }
+    40% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(5deg);
+        background-color: blue;
+    }
+    60% {
+        transform: rotate(-5deg);
+        background-color: lightblue;
+        border: 1px solid blue;
+    }
+    70% {
+        transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-3deg);
+    }
+    90% {
+        transform: rotate(5deg);
+        transform: rotate(-5deg);
+    }
+    100% {
+      transform: scale(1.0) rotate(0deg);
+      
+    }
+
+  }
+
+  // To do... Add a media query for smaller screens
+
+
